@@ -1,37 +1,27 @@
-import {Component} from 'react';
-import { ChromePicker } from 'react-color';
-import bin from '../images/garbage.png'
+import { Component } from 'react';
+import PalettePanel from './PalettePanel';
+import PaletteTools from './PaletteTools';
 
 export default class Palette extends Component {
+    constructor() {
+        super()
+        this.addPanel = this.addPanel.bind(this);
+    }
 
-  render() {
-    return (
-      <>
-        <input type="text" placeholder="Name Your Creation" id="name-swatch" />
-        <div id="palette-generator">
-            <div className="colour-generator" style={{backgroundColor: "lavenderblush"}}>
-                <img src={bin} class="hidden" />
-                <h5>3WC503</h5>
-            </div>
-            <div className="colour-generator" style={{backgroundColor: "lavender"}}>
-                <img src={bin}class="hidden" />
-                <h5>3WC503</h5>
-            </div>
-            <div className="colour-generator" style={{backgroundColor: "aliceblue"}}>
-                <img src={bin}class="hidden" />
-                <h5>3WC503</h5>
-            </div>
-            <div className="colour-generator" style={{backgroundColor: "lightpink"}}>
-                <img src={bin}class="hidden" />
-                <h5>3WC503</h5>
-            </div>
-            <div className="colour-generator" style={{backgroundColor: "lightblue"}}>
-                <img src={bin}class="hidden" />
-                <h5>3WC503</h5>
-            </div>
-        </div>
-        {/* <ChromePicker /> */}
-      </>
-    )
-  }
+    addPanel() {
+        const palettePanels = document.getElementById("#palette-generator")
+        palettePanels.append(<PalettePanel/>)
+    }
+
+    render() {
+        const n = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
+        return (
+            <>
+                <PaletteTools {...this.props.addPanel}/>
+                <div id="palette-generator">
+                    {[...Array(n)].map((e, i) => <PalettePanel key={i}/>)}
+                </div>
+            </>
+        )
+    }
 }

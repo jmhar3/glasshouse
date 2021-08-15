@@ -13,7 +13,7 @@ export default class Swatches extends Component {
     componentDidMount() {
         fetch('http://colormind.io/api/')
             .then(res => res.json())
-            .then(swatchData => this.setState({ name: swatchData.name, colours: swatchData.colours }))
+            .then(swatchData => this.setState({ name: swatchData.model, colours: swatchData.input }))
     }
 
     render() {

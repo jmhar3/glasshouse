@@ -9,22 +9,13 @@ export default class Nav extends Component {
         showing: false
     };
 
-    // componentDidMount() {
-    //     document.addEventListener('click', () => this.setState({ showing: !showing}));
-    // }
-    
-    // componentWillUnmount() {
-    //     const {showing} = this.state
-    //     document.removeEventListener('click', () => this.setState({ showing: !showing}));
-    // }
-
     render() {
         const {showing} = this.state
         return (
-            <header>
+            <header onMouseEnter={() => this.setState({ showing: !showing})} onMouseLeave={() => this.setState({ showing: !showing})}>
             <div id="menu-head">
                 <img src={userIcon} id="user-icon" />
-                <img src={menuButton} id="menu-button" onClick={() => this.setState({ showing: !showing})} />
+                <img src={menuButton} id="menu-button" style={{ display: (showing ? 'none' : 'block') }} />
                 <div id="user-access" style={{ display: (showing ? 'block' : 'none') }}>
                     <h5 className="user">user name</h5>
                     <Link to="/accountaccess">Sign Up Now</Link>

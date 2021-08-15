@@ -8,6 +8,7 @@
 }
 
 .palette-menu-item, input {
+    justify-items: center;
     background-color: rgba(245, 245, 245, 0.09);
     padding: 1.8vw;
     height: 3vw;
@@ -17,6 +18,14 @@
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     text-align: center;
+}
+
+.palette-menu-item h4 {
+    cursor: pointer;
+}
+
+input:hover {
+    cursor: text;
 }
 
 .palette-menu-item:hover {
@@ -58,20 +67,17 @@ input:focus {
 }
 
 .colour-generator {
-    width: 20%;
-    text-align: center;
-    padding-top: 80%;
+    height: 300vw;
+    width: 25%;
+    padding-top: 18vw;
+}
+
+.panel-tools {
+    justify-content: center;
+    gap: 3vw;
 }
 
 .colour-generator img {
-    width: 3vw;
-    cursor: pointer;
-}
-
-.colour-generator h5 {
-    margin-top: 1.8vw;
-    color: white;
-    mix-blend-mode: difference;
-    text-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
+    width: 3.9vw;
     cursor: pointer;
 }
