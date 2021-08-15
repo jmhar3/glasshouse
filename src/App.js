@@ -6,6 +6,7 @@ import CreationsPage from './pages/CreationsPage'
 import PalettePage from './pages/PalettePage'
 import AccountAccess from './pages/AccountAccess'
 import './App.css';
+import './typography/typography.css';
 
 const App = () => {
   return (

@@ -1,7 +1,3 @@
-.hidden {
-    display: none;
-}
-
 #user-icon {
     border-radius: 90%;
 }
@@ -48,13 +44,13 @@ header {
     cursor: pointer;
 }
 
-.navbar {
-    list-style: none;
-    padding-bottom: 1.5vw;
-    padding-left: 3.9vw;
+nav {
+    flex-direction: column;
+    padding: 1.5vw;
+    padding-left: 3vw;
+    gap: 1.2vw;
 }
 
-.navbar li {
-    padding-top: 1.5vw;
+#navbar a, #menu-head a {
     cursor: pointer;
-}
+  }

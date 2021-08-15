@@ -15,13 +15,13 @@ export default class Nav extends Component {
             <header>
             <div id="menu-head">
                 <img src={userIcon} id="user-icon" />
-                <img src={menuButton} id="menu-button" onClick={() => this.setState({ showing: !showing})} style={{ display: (showing ? 'none' : 'block') }} />
+                <img src={menuButton} id="menu-button" onClick={() => this.setState({ showing: !showing})} />
                 <div id="user-access" style={{ display: (showing ? 'block' : 'none') }}>
                     <h5 className="user">user name</h5>
                     <Link to="/accountaccess">Sign Up Now</Link>
                 </div>
             </div>
-            <nav className="navbar" style={{ display: (showing ? 'block' : 'none') }}>
+            <nav id="navbar" style={{ display: (showing ? 'flex' : 'none') }}>
                 <Link to="/">Explore Swatches</Link>
                 <Link to="/creations">Your Creations</Link>
                 <Link to="/palette">Make Your Own</Link>

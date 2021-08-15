@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Glamour-Extended';
+    src: url('./GlamourAbsolute_Extended.otf');
+}
+
+@font-face {
+    font-family: 'Glamour-Regular';
+    src: url('./GlamourAbsolute_Regular.otf');
+}
+
+@font-face {
+    font-family: 'Glamour-Condensed';
+    src: url('./GlamourAbsolute_Condensed.otf');
+}
+
+h1, h2, h3, h4, h5, p, div, a, button, li, input {
+    font-family: 'Glamour-Regular';
+    font-weight: normal;
+    color: rgb(72, 0, 100);
+}
+
+h1 {
+    font-size: 6.9vw;
+}
+
+h2 {
+    font-size: 6vw;
+}
+
+h3 {
+    font-size: 4.5vw;
+}
+
+h4, li {
+    font-size: 2.1vw;
+}
+
+h5, a, input {
+    font-size: 1.8vw;
+}
+
+p, div {
+    font-size: 1.5vw;
+    color: rgb(18, 0, 46);
+}
+
+button {
+    font-size: 2.4vw;
+}
+
+a {
+    text-decoration: none;
+}
