@@ -1,0 +1,61 @@
+.hidden {
+    display: none;
+}
+
+#user-icon {
+    border-radius: 90%;
+}
+
+header img {
+    width: 3vw;
+    height: 3vw;
+    object-fit: fill;
+    cursor: pointer;
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+    left: 1.8vw;
+    top: 1.8vw;
+    background-color: rgba(245, 245, 245, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
+    backdrop-filter: blur( 3.0px );
+    -webkit-backdrop-filter: blur( 3.0px );
+    border-radius: 3vw;
+    transition: width 1.2s, height 1.2s;
+}
+
+#menu-head {
+    background-color: rgba(245, 245, 245, 0.09);
+    padding: 1.8vw;
+    padding-bottom: 1.8vw;
+    height: 3vw;
+    border-radius: 3vw;
+    display: flex;
+    gap: 1.8vw;
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
+    backdrop-filter: blur( 3.0px );
+    -webkit-backdrop-filter: blur( 3.0px );
+    align-items: center;
+}
+
+#menu-head:hover {
+    background-color: rgba(245, 245, 245, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
+}
+
+.user, .access {
+    cursor: pointer;
+}
+
+.navbar {
+    list-style: none;
+    padding-bottom: 1.5vw;
+    padding-left: 3.9vw;
+}
+
+.navbar li {
+    padding-top: 1.5vw;
+    cursor: pointer;
+}
