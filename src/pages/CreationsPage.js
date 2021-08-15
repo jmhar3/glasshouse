@@ -6,6 +6,9 @@ const CreationsPage = () => {
     return(
         <div id="homepage">
             <Link to='/palette' className="action-button">Make Another</Link>
+            <div className="page-title">
+                <h1 className="title">Creations</h1>
+            </div>
             <Swatches />
         </div>
     )

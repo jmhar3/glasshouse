@@ -9,6 +9,15 @@ export default class Nav extends Component {
         showing: false
     };
 
+    // componentDidMount() {
+    //     document.addEventListener('click', () => this.setState({ showing: !showing}));
+    // }
+    
+    // componentWillUnmount() {
+    //     const {showing} = this.state
+    //     document.removeEventListener('click', () => this.setState({ showing: !showing}));
+    // }
+
     render() {
         const {showing} = this.state
         return (

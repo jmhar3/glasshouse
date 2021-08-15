@@ -1,0 +1,77 @@
+#palette-menu {
+    position: fixed;
+    display: flex;
+    gap: 1.8vw;
+    z-index: 1;
+    right: 1.8vw;
+    top: 1.8vw;
+}
+
+.palette-menu-item, input {
+    background-color: rgba(245, 245, 245, 0.09);
+    padding: 1.8vw;
+    height: 3vw;
+    border: none;
+    border-radius: 3vw;
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
+    backdrop-filter: blur( 3.0px );
+    -webkit-backdrop-filter: blur( 3.0px );
+    text-align: center;
+}
+
+.palette-menu-item:hover {
+    background-color: rgba(245, 245, 245, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
+    cursor: pointer;
+}
+
+.palette-menu-item img {
+    width: 3vw;
+}
+
+#name-swatch {
+    padding: 0.9vw;
+    position: fixed;
+    top: 2.4vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+input:hover {
+    background-color: rgba(245, 245, 245, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.15);
+}
+
+input:focus {
+    outline: none;
+    background-color: rgba(245, 245, 245, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.3);
+}
+
+#palette-generator {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.colour-generator {
+    width: 20%;
+    text-align: center;
+    padding-top: 80%;
+}
+
+.colour-generator img {
+    width: 3vw;
+    cursor: pointer;
+}
+
+.colour-generator h5 {
+    margin-top: 1.8vw;
+    color: white;
+    mix-blend-mode: difference;
+    text-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
+    cursor: pointer;
+}
