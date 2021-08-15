@@ -1,12 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Nav from './Nav/Nav'
-import HomePage from './pages/HomePage'
-import CreationsPage from './pages/CreationsPage'
-import PalettePage from './pages/PalettePage'
-import AccountAccess from './pages/AccountAccess'
-import './App.css';
-import './typography/typography.css';
+import Nav from './Nav/Nav';
+import HomePage from './pages/HomePage';
+import CreationsPage from './pages/CreationsPage';
+import PalettePage from './pages/PalettePage';
+import AccountAccess from './pages/AccountAccess';
 
 const App = () => {
   return (

@@ -10,6 +10,9 @@ const CreationsPage = () => {
                 <h1 className="title">Creations</h1>
             </div>
             <Swatches />
+            <footer>
+                <p>Special thanks to <a href="http://colormind.io/">ColorMind</a> and <a href="https://www.freepik.com" title="Freepik">Freepik</a>.</p>
+            </footer>
         </div>
     )
 }

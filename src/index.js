@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
+import './typography/typography.css';
 
 ReactDOM.render(
   <React.StrictMode>

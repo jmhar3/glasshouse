@@ -10,6 +10,9 @@ const HomePage = () => {
                 <h1 className="title">Swatches</h1>
             </span>
             <Swatches />
+            <footer>
+                <p>Special thanks to <a href="http://colormind.io/">ColorMind</a> and <a href="https://www.freepik.com" title="Freepik">Freepik</a>.</p>
+            </footer>
         </div>
     )
 }

@@ -4,22 +4,19 @@ body {
     padding-right: 1.8vw;
 }
 
-.page-title{
-    display: flex;
-    text-align: center;
-}
-
 .title {
     text-align: center;
     margin-bottom: 1.8vw;
     padding-left: 1.8vw;
     padding-right: 1.8vw;
-    background-color: rgba(245, 245, 245, 0.12);
+    background-color: rgba(245, 245, 245, 0.18);
     box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     border-radius: 1.8vw;
     width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .action-button {
@@ -83,20 +80,17 @@ body {
     padding-bottom: 1vw;
 }
 
-.user-name {
+.swatch-name {
     padding-bottom: .3vw;
     padding-left: 1.2vw;
     padding-right: 1.2vw;
-    background-color: rgba(250, 242, 242, 0.12);
     border-radius: 3vw;
     box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
-    backdrop-filter: blur( 3.0px );
-    -webkit-backdrop-filter: blur( 3.0px );
 }
 
-.user-name:hover {
+.swatch-name:hover {
     background-color: rgba(250, 242, 242, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
     cursor: pointer;
 }
 
