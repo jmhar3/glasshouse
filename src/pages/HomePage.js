@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import Swatches from '../components/Swatches'
-import './homepage.css';
+import './swatches.css';
 
 const HomePage = () => {
     return(
-        <>
-            <Link to='/palette' id="action-button">Make Your Own</Link>
+        <div id="homepage">
+            <Link to='/palette' className="action-button">Make Your Own</Link>
             <Swatches />
-        </>
+        </div>
     )
 }
 
