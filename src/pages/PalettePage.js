@@ -1,6 +1,13 @@
+import {Component} from 'react';
+import Palette from '../components/Palette';
+import PaletteTools from '../components/PaletteTools'
+
 const PalettePage = () => {
     return (
-        <div></div>
+        <>
+            <PaletteTools />
+            <Palette />
+        </>
     )
 }
 
