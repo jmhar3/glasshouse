@@ -1,19 +1,18 @@
-// import firebase from 'firebase';
-// import firebaseui from 'firebaseui';
+import firebase from "firebase/app";
+import "firebase/analytics";
+import "firebase/auth";
+import "firebase/firestore";
+import { FirebaseAuth } from "react-firebaseui";
 
-// var ui = new firebaseui.auth.AuthUI(firebase.auth());
+const firebaseConfig = {
+    apiKey: 
+    "AIzaSyCJf0VUOlF1V_B9Dmwl3WYbd0zrWqJ2Vdc",
+    authDomain: "glasshouse-jmar.firebaseapp.com",
+    databaseURL: "https://glasshouse-jmar.firebaseio.com",
+    projectId: "glasshouse-jmar",
+    storageBucket: "glasshouse-jmar.appspot.com",
+    messagingSenderId: "891273660406",
+    appId: "1:891273660406:web:6fd086f5afbf0290d5e9d7",
+};
+firebase.initializeApp(firebaseConfig);
 
-// ui.start('#firebaseui-auth-container', {
-//     signInOptions: [
-//         {
-//             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-//             requireDisplayName: true
-//         }
-//     ]
-// });
-
-// <h1>Welcome to My Awesome App</h1>
-// <div id="firebaseui-auth-container"></div>
-// <div id="loader">Loading...</div>
-
-// export default ui;
