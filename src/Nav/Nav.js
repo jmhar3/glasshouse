@@ -14,10 +14,10 @@ export default class Nav extends Component {
         return (
             <header onMouseEnter={() => this.setState({ showing: !showing})} onMouseLeave={() => this.setState({ showing: !showing})}>
             <div id="menu-head">
-                <img src={userIcon} id="user-icon" />
-                <img src={menuButton} id="menu-button" style={{ display: (showing ? 'none' : 'block') }} />
+                <img src={userIcon} id="user-icon" alt="user icon" />
+                <img src={menuButton} id="menu-button" alt="menu" style={{ display: (showing ? 'none' : 'block') }} />
                 <div id="user-access" style={{ display: (showing ? 'block' : 'none') }}>
-                    <h5 className="user">user name</h5>
+                    <h5 className="user">You are not logged in.</h5>
                     <Link to="/accountaccess">Sign Up Now</Link>
                 </div>
             </div>

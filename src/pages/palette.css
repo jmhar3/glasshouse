@@ -11,13 +11,15 @@
     justify-items: center;
     background-color: rgba(245, 245, 245, 0.09);
     padding: 1.8vw;
-    height: 3vw;
+    height: 5.1vw;
     border: none;
     border-radius: 3vw;
     box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     text-align: center;
+    align-items: center;
+    display: flex;
 }
 
 .palette-menu-item h4 {
@@ -26,6 +28,10 @@
 
 input:hover {
     cursor: text;
+}
+
+::placeholder {
+    color: rgb(237, 224, 255);
 }
 
 .palette-menu-item:hover {
@@ -80,4 +86,5 @@ input:focus {
 .colour-generator img {
     width: 3.9vw;
     cursor: pointer;
+    padding-bottom: 3.9vw;
 }

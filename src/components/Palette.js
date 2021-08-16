@@ -1,25 +1,22 @@
 import { Component } from 'react';
 import PalettePanel from './PalettePanel';
-import PaletteTools from './PaletteTools';
+import PaletteMenu from './PaletteMenu';
+// import AddPanel from './AddPanel';
 
 export default class Palette extends Component {
-    constructor() {
-        super()
-        this.addPanel = this.addPanel.bind(this);
-    }
-
-    addPanel() {
-        const palettePanels = document.getElementById("#palette-generator")
-        palettePanels.append(<PalettePanel/>)
-    }
+    onRemove = () => {
+    };
 
     render() {
         const n = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
         return (
             <>
-                <PaletteTools {...this.props.addPanel}/>
+                <PaletteMenu />
+                {/* <div id="palette-menu">
+                    <AddPanel />
+                </div> */}
                 <div id="palette-generator">
-                    {[...Array(n)].map((e, i) => <PalettePanel key={i}/>)}
+                    {[...Array(n)].map((swatch, i) => <PalettePanel onRemove={this.onRemove} />)}
                 </div>
             </>
         )

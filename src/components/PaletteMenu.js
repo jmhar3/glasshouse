@@ -38,15 +38,15 @@ export default class PaletteTools extends Component {
                 <input type="text" placeholder="Name Your Creation" id="name-swatch" />
                 <div id="palette-menu">
                     <div class="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.showAddDiv} onClick={this.props.addPanel}>
-                        <img src={addDivIcon} style={{ display: (addDiv ? 'none' : 'block') }} />
+                        <img src={addDivIcon} alt="add colour" style={{ display: (addDiv ? 'none' : 'block') }} />
                         <h4 style={{ display: (addDiv ? 'block' : 'none') }}>Add Colour</h4>
                     </div>
                     <div class="palette-menu-item" onMouseEnter={this.showUpload} onMouseLeave={this.showUpload} onClick={this.uploadPalette}>
-                        <img src={uploadIcon} style={{ display: (upload ? 'none' : 'block') }} />
+                        <img src={uploadIcon} alt="upload" style={{ display: (upload ? 'none' : 'block') }} />
                         <h4 style={{ display: (upload ? 'block' : 'none') }}>Upload</h4>
                     </div>
                     <div class="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.showSave} onClick={this.savePalette}>
-                        <img src={saveIcon} style={{ display: (save ? 'none' : 'block') }} />
+                        <img src={saveIcon} alt="save" style={{ display: (save ? 'none' : 'block') }} />
                         <h4 style={{ display: (save ? 'block' : 'none') }}>Save</h4>
                     </div>
                 </div>

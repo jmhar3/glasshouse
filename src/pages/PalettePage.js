@@ -1,4 +1,3 @@
-import {Component} from 'react';
 import Palette from '../components/Palette';
 import './palette.css'
 

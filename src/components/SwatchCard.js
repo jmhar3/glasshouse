@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const SwatchCard = ({ name, colours, index }) => (
     <div className="swatch-card" key={index}>
         <div className="card-head">
-            <h4 className="swatch-name">{name}</h4>
+            <Link to="/palette" className="swatch-name">{name}</Link>
             <h4 className="like-button">❤️</h4>
         </div>
         <div className="colours">
