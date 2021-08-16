@@ -16,10 +16,14 @@ export default class Swatches extends Component {
             .then(swatchData => this.setState({ name: swatchData.model, colours: swatchData.input }))
     }
 
+    setBackground(colours) {
+        document.body.style.backgroundImage = `linear-gradient(to right, ${colours})`;
+    }
+
     render() {
         return (
             <>
-                <SwatchCard name={this.state.name} colours={this.state.colours} />
+                <SwatchCard name={this.state.name} colours={this.state.colours} setBackground={this.setBackground(this.state.colours)}/>
             </>
         )
     }

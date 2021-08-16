@@ -2,7 +2,7 @@ import { Component } from 'react';
 import randomColor from 'randomcolor';
 import bin from '../images/garbage.png';
 import swatchColour from '../images/swatches.png';
-import ColourTool from './ColourTool';
+import { SliderPicker } from 'react-color';
 
 export default class PalettePanel extends Component {
     state = {
@@ -21,7 +21,7 @@ export default class PalettePanel extends Component {
         this.setState({ colourTool: !colourTool})
     }
 
-    handleChangeComplete = (color) => {
+    handleChange = (color) => {
         this.setState({ background: color.hex });
       };
 
@@ -34,9 +34,9 @@ export default class PalettePanel extends Component {
                     <img src={swatchColour} alt="change colour" onClick={this.showColourTool}/>
                 </div>
                 <div style={{ display: (colourTool ? 'block' : 'none') }}>
-                    <ColourTool
+                    <SliderPicker
                     color={ this.state.background }
-                    onChangeComplete={ this.handleChangeComplete }
+                    onChange={ this.handleChange }
      />
                 </div>
             </div>

@@ -88,3 +88,9 @@ input:focus {
     cursor: pointer;
     padding-bottom: 3.9vw;
 }
+
+/* .slider-picker {} */
+
+.hue-horizontal {
+    border-radius: 1.2vw;
+}

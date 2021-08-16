@@ -1,4 +1,4 @@
-import ui from '../components/firebase';
+import ui from '../components//firebase';
 
 const AccountAccess = () => {
     return (
