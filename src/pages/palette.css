@@ -75,7 +75,7 @@ input:focus {
 .colour-generator {
     height: 300vw;
     width: 25%;
-    padding-top: 18vw;
+    padding-top: 12vw;
 }
 
 .panel-tools {
@@ -93,4 +93,5 @@ input:focus {
 
 .hue-horizontal {
     border-radius: 1.2vw;
+    cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import addDivIcon from '../images/plus.png';
-import uploadIcon from '../images/right-arrow.png';
-import saveIcon from '../images/save.png';
+import addDivIcon from '../../images/plus.png';
+import uploadIcon from '../../images/right-arrow.png';
+import saveIcon from '../../images/save.png';
 
 export default class PaletteTools extends Component {
     state = {

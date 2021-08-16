@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import addDivIcon from '../images/plus.png';
+import addDivIcon from '../../images/plus.png';
 
 export default class PaletteTools extends Component {
     state = {

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Swatches from '../components/Swatches'
+import Swatches from '../components/swatches/Swatches'
 import './swatches.css';
 
 const HomePage = () => {

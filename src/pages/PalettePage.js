@@ -1,4 +1,4 @@
-import Palette from '../components/Palette';
+import Palette from '../components/palette/Palette';
 import './palette.css'
 
 const PalettePage = () => {

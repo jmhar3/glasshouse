@@ -19,6 +19,7 @@ header {
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     border-radius: 2.4vw;
+    /* animation: ; */
 }
 
 #menu-head {
