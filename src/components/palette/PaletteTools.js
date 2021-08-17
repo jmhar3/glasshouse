@@ -17,10 +17,10 @@ export default class PalettePanel extends Component {
       };
 
     render(onRemove) {
-        const { toolMenu, colourTool } = this.state
+        const {  colourTool } = this.state
         return (
             <div>
-                <div className="panel-tools" style={{ display: (toolMenu ? 'flex' : 'none') }} >
+                <div className="panel-tools">
                     <img src={bin} alt="delete colour" onClick={onRemove} />
                     <img src={swatchColour} alt="change colour" onMouseEnter={this.showColourTool} />
                 </div>
