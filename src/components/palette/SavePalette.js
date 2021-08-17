@@ -23,13 +23,10 @@ export default class PaletteTools extends Component {
     render() {
         const { save } = this.state
         return (
-            <>
-                <input type="text" placeholder="Name Your Creation" id="name-swatch" />
-                <div class="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.hideSave} onClick={this.savePalette}>
-                    <img src={saveIcon} alt="save" style={{ display: (save ? 'none' : 'block') }} />
-                    <h4 style={{ display: (save ? 'block' : 'none') }}>Save</h4>
-                </div>
-            </>
+            <div class="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.hideSave} onClick={this.savePalette}>
+                <img src={saveIcon} alt="save" style={{ display: (save ? 'none' : 'block') }} />
+                <h4 style={{ display: (save ? 'block' : 'none') }}>Save</h4>
+            </div>
         )
     }
 }

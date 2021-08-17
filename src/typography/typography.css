@@ -16,7 +16,7 @@
 h1, h2, h3, h4, h5, p, div, a, button, li, input {
     font-family: 'Glamour-Regular';
     font-weight: normal;
-    color: rgb(244, 215, 255);
+    color: rgb(74, 33, 88);
     cursor: default;
 }
 
@@ -32,11 +32,11 @@ h3 {
     font-size: 2.4vw;
 }
 
-h4, li {
+h4, li, input {
     font-size: 2.1vw;
 }
 
-h5, input, a {
+h5, a {
     font-size: 1.8vw;
 }
 
@@ -58,9 +58,13 @@ a {
 }
 
 a:hover {
-    color: rgb(236, 199, 250);
+    color: rgb(243, 210, 255);
 }
 
 input {
-    color: rgb(45, 0, 61);
+    color: rgb(116, 0, 155);
+}
+
+::placeholder {
+    color: rgb(74, 33, 88);
 }

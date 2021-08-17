@@ -24,14 +24,12 @@
 
 .palette-menu-item h4 {
     cursor: pointer;
+    margin: 0;
 }
 
-input:hover {
+input {
+    padding: .9vw;
     cursor: text;
-}
-
-::placeholder {
-    color: rgb(237, 224, 255);
 }
 
 .palette-menu-item:hover {
@@ -88,8 +86,6 @@ input:focus {
     cursor: pointer;
     padding-bottom: 3.9vw;
 }
-
-/* .slider-picker {} */
 
 .hue-horizontal {
     border-radius: 1.2vw;

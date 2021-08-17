@@ -24,6 +24,7 @@ export default class Palette extends Component {
         return (
             <>
                 <div id="palette-menu">
+                    <input type="text" placeholder="Name Your Creation" id="name-swatch" />
                     <AddPanel />
                     <UploadPalette />
                     <SavePalette />
