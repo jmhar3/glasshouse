@@ -11,16 +11,27 @@ export default class PaletteTools extends Component {
     };
 
     showAddDiv = () => {
-        const { addDiv } = this.state
-        this.setState({ addDiv: !addDiv })
+        this.setState({ addDiv: true })
     }
+
+    hideAddDiv = () => {
+        this.setState({ addDiv: false })
+    }
+
     showUpload = () => {
-        const { upload } = this.state
-        this.setState({ upload: !upload })
+        this.setState({ upload: true })
     }
+
+    hideUpload = () => {
+        this.setState({ upload: false })
+    }
+
     showSave = () => {
-        const { save } = this.state
-        this.setState({ save: !save })
+        this.setState({ save: true })
+    }
+
+    hideSave = () => {
+        this.setState({ save: false })
     }
 
     uploadPalette = () => {
@@ -37,15 +48,15 @@ export default class PaletteTools extends Component {
             <>
                 <input type="text" placeholder="Name Your Creation" id="name-swatch" />
                 <div id="palette-menu">
-                    <div class="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.showAddDiv} onClick={this.props.addPanel}>
+                    <div class="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.hideAddDiv} onClick={this.props.addPanel}>
                         <img src={addDivIcon} alt="add colour" style={{ display: (addDiv ? 'none' : 'block') }} />
                         <h4 style={{ display: (addDiv ? 'block' : 'none') }}>Add Colour</h4>
                     </div>
-                    <div class="palette-menu-item" onMouseEnter={this.showUpload} onMouseLeave={this.showUpload} onClick={this.uploadPalette}>
+                    <div class="palette-menu-item" onMouseEnter={this.showUpload} onMouseLeave={this.hideUpload} onClick={this.uploadPalette}>
                         <img src={uploadIcon} alt="upload" style={{ display: (upload ? 'none' : 'block') }} />
                         <h4 style={{ display: (upload ? 'block' : 'none') }}>Upload</h4>
                     </div>
-                    <div class="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.showSave} onClick={this.savePalette}>
+                    <div class="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.hideSave} onClick={this.savePalette}>
                         <img src={saveIcon} alt="save" style={{ display: (save ? 'none' : 'block') }} />
                         <h4 style={{ display: (save ? 'block' : 'none') }}>Save</h4>
                     </div>

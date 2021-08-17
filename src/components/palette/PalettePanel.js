@@ -12,19 +12,16 @@ export default class PalettePanel extends Component {
     };
     
     showTools = () => {
-        const {toolMenu} = this.state
-        this.setState({ toolMenu: !toolMenu})
+        this.setState({ toolMenu: true})
     }
     
     hideTools = () => {
-        const {toolMenu} = this.state
-        this.setState({ toolMenu: !toolMenu})
+        this.setState({ toolMenu: false})
         this.setState({ colourTool: false})
     }
 
     showColourTool = () => {
-        const {colourTool} = this.state
-        this.setState({ colourTool: !colourTool})
+        this.setState({ colourTool: true})
     }
 
     handleChange = (color) => {
