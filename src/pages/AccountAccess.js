@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import SignInScreen from '../components/firebase/accessFirebase';
-import './account-access.css';
+import './account-access.global.css';
 
 const AccountAccess = () => {
     return(

@@ -4,6 +4,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import { FirebaseAuth } from "react-firebaseui";
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJf0VUOlF1V_B9Dmwl3WYbd0zrWqJ2Vdc",
@@ -41,15 +42,18 @@ function SignInScreen() {
 
     if (!isSignedIn) {
         return (
-            <div>
+            <div className="access-modal">
                 <FirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
             </div>
         );
     }
     return (
-        <div>
-            <h4>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</h4>
-            <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+        <div id="logged-in">
+            <div id="logged-in-header">
+                <h1>Welcome {firebase.auth().currentUser.displayName}!</h1>
+                <h4>You are signed in.</h4>
+            </div>
+            <Link to='/palette' id="logged-in-button">Start Creating</Link>
         </div>
     );
 }

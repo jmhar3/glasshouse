@@ -17,15 +17,15 @@ function MenuFirebase() {
     if (!isSignedIn) {
         return (
             <div>
-                <h5 className="user">You are not logged in.</h5>
-                <Link to="/accountaccess">Sign Up Now</Link>
+                <h5 className="user">Howdy Stranger</h5>
+                <Link to="/accountaccess">Sign In</Link>
             </div>
         );
     }
     return (
         <div>
-            <h5 className="user">Welcome {firebase.auth().currentUser.displayName}!</h5>
-            <a className="access" onClick={() => firebase.auth().signOut()}>Sign-out</a>
+            <h5 className="user">Hello {firebase.auth().currentUser.displayName}!</h5>
+            <a className="access" onClick={() => firebase.auth().signOut()}>Sign Out</a>
         </div>
     );
 }

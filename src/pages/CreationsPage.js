@@ -3,14 +3,18 @@ import Swatches from '../components/swatches/Swatches'
 import './swatches.css';
 
 const CreationsPage = () => {
-    return(
-        <div id="creations-page">
-            <Link to='/palette' className="action-button">Make Another</Link>
-            <div className="page-title">
-                <h1 className="title">Creations</h1>
+    return (
+        <>
+            <div id="creations-page">
+                <div className="page-title">
+                    <h1 className="title">Creations</h1>
+                </div>
+                <Swatches />
             </div>
-            <Swatches />
-        </div>
+            <footer id="footer">
+                <p>Special thanks to <a href="http://colormind.io/">ColorMind</a> + <a href="https://www.freepik.com" title="Freepik">Freepik</a>.</p>
+            </footer>
+        </>
     )
 }
 
