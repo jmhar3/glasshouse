@@ -1,27 +1,41 @@
-#firebaseui_container {
-
+div.firebaseui_container, div.mdl-card, .firebaseui-textfield input {
+    background-color: rgba(250, 242, 242, 0.10);
+    border: .45vw solid transparent;
+    border-radius: 3vw;
+    padding: 1.8vw;
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
+    backdrop-filter: blur( 3.0px );
+    -webkit-backdrop-filter: blur( 3.0px ); 
 }
 
-.mdl-card {
-
+.firebaseui-textfield input {
+    background-color: rgba(250, 242, 242, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
+    border: none;
+    height: 9vw;
 }
 
-.firebaseui-card-header {
-
+.firebaseui-textfield input:hover {
+    background-color: rgba(250, 242, 242, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.15);
 }
 
-.firebaseui-card-content {
-
+.firebaseui-textfield input:focus {
+    background-color: rgba(250, 242, 242, 0.21);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.18);
 }
 
-.firebaseui-textfield {
+.firebaseui-form-actions.mdl-button--raised.mdl-button--colored {
+    background: none;
+}
+
+.firebaseui-form-actions button {
     
-}
-
-.firebaseui-card-actions {
-
-}
-
-.firebaseui-id-submit {
-
+    background-color: rgba(250, 242, 242, 0.12);
+    border: none;
+    border-radius: 3vw;
+    padding: 1.8vw;
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
+    backdrop-filter: blur( 3.0px );
+    -webkit-backdrop-filter: blur( 3.0px ); 
 }

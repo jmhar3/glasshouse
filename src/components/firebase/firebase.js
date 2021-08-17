@@ -42,7 +42,6 @@ function SignInScreen() {
     if (!isSignedIn) {
         return (
             <div>
-                <h4>Please sign-in:</h4>
                 <FirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
             </div>
         );
