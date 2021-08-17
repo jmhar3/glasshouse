@@ -11,9 +11,15 @@ export default class Swatches extends Component {
     }
 
     componentDidMount() {
-        fetch('http://colormind.io/api/')
-            .then(res => res.json())
-            .then(swatchData => this.setState({ name: swatchData.model, colours: swatchData.input }))
+        fetch('http://colormind.io/api/', {
+        method: 'POST',
+        body: JSON.stringify({
+        model : "default",
+	    input : [[44,43,44],[90,83,82],"N","N","N"]
+    })
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
     }
 
     setBackground(colours) {

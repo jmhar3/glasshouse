@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import {Link} from 'react-router-dom';
 import './nav.css';
-import userIcon from '../images/NG.jpeg'
+import homeIcon from '../images/swatches.png'
 import menuButton from '../images/list.png'
+import MenuFirebase from '../components/firebase/menuFirebase';
 
 export default class Nav extends Component {
     state = {
@@ -14,11 +15,10 @@ export default class Nav extends Component {
         return (
             <header onMouseEnter={() => this.setState({ showing: !showing})} onMouseLeave={() => this.setState({ showing: !showing})}>
             <div id="menu-head">
-                <img src={userIcon} id="user-icon" alt="user icon" />
+                <Link to="/"><img src={homeIcon} id="user-icon" alt="home icon" /></Link>
                 <img src={menuButton} id="menu-button" alt="menu" style={{ display: (showing ? 'none' : 'block') }} />
                 <div id="user-access" style={{ display: (showing ? 'block' : 'none') }}>
-                    <h5 className="user">You are not logged in.</h5>
-                    <Link to="/accountaccess">Sign Up Now</Link>
+                    <MenuFirebase />
                 </div>
             </div>
             <nav id="navbar" style={{ display: (showing ? 'flex' : 'none') }}>

@@ -1,11 +1,13 @@
-import ui from '../components//firebase';
+import { Link } from 'react-router-dom';
+import SignInScreen from '../components/firebase/accessFirebase';
+import './account-access.global.css';
 
 const AccountAccess = () => {
-    return (
-        <div>
-            <ui />
+    return(
+        <div id="account-access">
+            <SignInScreen />
         </div>
     )
 }
 
-export default AccountAccess;
+export default AccountAccess

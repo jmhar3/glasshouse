@@ -1,7 +1,3 @@
-#user-icon {
-    border-radius: 90%;
-}
-
 header img {
     width: 3vw;
     height: 3vw;
@@ -19,15 +15,16 @@ header {
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     border-radius: 2.4vw;
+    /* animation: ; */
 }
 
 #menu-head {
     background-color: rgba(245, 245, 245, 0.09);
-    padding: 1.5vw;
+    padding: 1.8vw;
     height: 5.1vw;
     border-radius: 2.4vw;
     display: flex;
-    gap: 1.8vw;
+    gap: 1.5vw;
     box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
