@@ -1,14 +1,14 @@
-import ui from '../components/firebase/firebase';
+import { Link } from 'react-router-dom';
+import SignInScreen from '../components/firebase/firebase';
 
-const AccountAccess = () => {
-    return (
-        <div>
-            <ui />
-            <h1>Welcome to My Awesome App</h1>
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Loading...</div>
+const CreationsPage = () => {
+    return(
+        <div id="homepage">
+            <Link to='/palette' className="action-button">Make Another</Link>
+            <h1>hi</h1>
+            <SignInScreen />
         </div>
     )
 }
 
-export default AccountAccess;
+export default CreationsPage
