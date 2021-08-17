@@ -21,8 +21,8 @@ header {
 #menu-head {
     background-color: rgba(245, 245, 245, 0.09);
     padding: 1.8vw;
-    height: 5.1vw;
-    border-radius: 2.4vw;
+    height: 6vw;
+    border-radius: 2.7vw;
     display: flex;
     gap: 1.5vw;
     box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);

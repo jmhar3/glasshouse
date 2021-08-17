@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "swatches.png",
-      "type": "image/png",
+      "src": "../src/images/swatches.png",
+      "type": "png",
       "sizes": "192x192"
     },
     {
-      "src": "swatches.png",
-      "type": "image/png",
+      "src": "../src/images/swatches.png",
+      "type": "png",
       "sizes": "512x512"
     }
   ],

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Swatches from '../components/swatches/Swatches'
 import './swatches.css';
 
