@@ -3,9 +3,9 @@ import './palette.css'
 
 const PalettePage = () => {
     return (
-        <>
+        <div id="palette-page">
             <Palette />
-        </>
+        </div>
     )
 }
 

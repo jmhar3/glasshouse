@@ -4,7 +4,7 @@ import './swatches.css';
 
 const CreationsPage = () => {
     return(
-        <div id="homepage">
+        <div id="creations-page">
             <Link to='/palette' className="action-button">Make Another</Link>
             <div className="page-title">
                 <h1 className="title">Creations</h1>

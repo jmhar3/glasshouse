@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
-import SignInScreen from '../components/firebase/firebase';
+import SignInScreen from '../components/firebase/accessFirebase';
 import './account-access.css';
 
-const CreationsPage = () => {
+const AccountAccess = () => {
     return(
-        <div id="homepage">
-            <Link to='/palette' className="action-button">Make Another</Link>
+        <div id="account-access">
             <SignInScreen />
         </div>
     )
 }
 
-export default CreationsPage
+export default AccountAccess
