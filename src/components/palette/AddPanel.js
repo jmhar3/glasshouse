@@ -14,15 +14,10 @@ export default class PaletteTools extends Component {
     render() {
         const { addDiv } = this.state
         return (
-            <>
-                <input type="text" placeholder="Name Your Creation" id="name-swatch" />
-                <div id="palette-menu">
-                    <div class="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.showAddDiv} onClick={this.props.addPanel}>
-                        <img src={addDivIcon} alt="add colour" style={{ display: (addDiv ? 'none' : 'block') }} />
-                        <h4 style={{ display: (addDiv ? 'block' : 'none') }}>Add Colour</h4>
-                    </div>
-                </div>
-            </>
+            <div class="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.showAddDiv} onClick={this.props.addPanel}>
+                <img src={addDivIcon} alt="add colour" style={{ display: (addDiv ? 'none' : 'block') }} />
+                <h4 style={{ display: (addDiv ? 'block' : 'none') }}>Add Colour</h4>
+            </div>
         )
     }
 }

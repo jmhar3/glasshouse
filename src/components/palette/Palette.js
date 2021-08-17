@@ -1,9 +1,21 @@
 import { Component } from 'react';
 import PalettePanel from './PalettePanel';
-import PaletteMenu from './PaletteMenu';
-// import AddPanel from './AddPanel';
+import AddPanel from './AddPanel';
+import UploadPalette from './UploadPalette';
+import SavePalette from './SavePalette'
 
 export default class Palette extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            panels: [],
+            currentPanel: {
+                colour: '',
+                key: ''
+            }
+        }
+    }
+
     onRemove = () => {
     };
 
@@ -11,10 +23,12 @@ export default class Palette extends Component {
         const n = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
         return (
             <>
-                <PaletteMenu />
-                {/* <div id="palette-menu">
+                <div id="palette-menu">
+                    <input type="text" placeholder="Name Your Creation" id="name-swatch" />
                     <AddPanel />
-                </div> */}
+                    <UploadPalette />
+                    <SavePalette />
+                </div>
                 <div id="palette-generator">
                     {[...Array(n)].map((swatch, i) => <PalettePanel onRemove={this.onRemove} />)}
                 </div>
