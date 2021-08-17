@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SignInScreen from '../components/firebase/firebase';
+import './account-access.css';
 
 const CreationsPage = () => {
     return(

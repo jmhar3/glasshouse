@@ -15,11 +15,7 @@ const firebaseConfig = {
     appId: "1:891273660406:web:6fd086f5afbf0290d5e9d7",
 };
 
-if (!firebase.apps.length) {
-    firebase.initializeApp({ firebaseConfig });
-} else {
-    firebase.app();
-}
+firebase.initializeApp(firebaseConfig);
 
 const uiConfig = {
     signInFlow: 'popup',
