@@ -1,6 +1,4 @@
 import { Component } from 'react';
-import addDivIcon from '../../images/plus.png';
-import uploadIcon from '../../images/right-arrow.png';
 import saveIcon from '../../images/save.png';
 
 export default class PaletteTools extends Component {
@@ -23,7 +21,7 @@ export default class PaletteTools extends Component {
     render() {
         const { save } = this.state
         return (
-            <div class="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.hideSave} onClick={this.savePalette}>
+            <div className="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.hideSave} onClick={this.savePalette}>
                 <img src={saveIcon} alt="save" style={{ display: (save ? 'none' : 'block') }} />
                 <h4 style={{ display: (save ? 'block' : 'none') }}>Save</h4>
             </div>

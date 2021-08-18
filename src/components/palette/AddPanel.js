@@ -7,14 +7,17 @@ export default class PaletteTools extends Component {
     };
 
     showAddDiv = () => {
-        const { addDiv } = this.state
-        this.setState({ addDiv: !addDiv })
+        this.setState({ addDiv: true })
     }
 
-    render() {
+    hideAddDiv = () => {
+        this.setState({ addDiv: false })
+    }
+
+    render(addPanel) {
         const { addDiv } = this.state
         return (
-            <div class="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.showAddDiv} onClick={this.props.addPanel}>
+            <div className="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.hideAddDiv} onClick={addPanel}>
                 <img src={addDivIcon} alt="add colour" style={{ display: (addDiv ? 'none' : 'block') }} />
                 <h4 style={{ display: (addDiv ? 'block' : 'none') }}>Add Colour</h4>
             </div>

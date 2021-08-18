@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import SignInScreen from '../components/firebase/accessFirebase';
 import './account-access.global.css';
 
