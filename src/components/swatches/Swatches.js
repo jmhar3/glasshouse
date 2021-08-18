@@ -12,8 +12,15 @@ export default class Swatches extends Component {
         };
     }
 
+    renderPanels = () => {
+        const swatchColours = Array.from(this.state.colours)
+        const colours =             swatchColours.map((colour, index) => `, rgba(${colour[0]},${colour[1]},${colour[2]},1)`)
+        console.log(colours.join(''))
+        return colours.join('');
+    }
+
     componentDidMount() {
-        document.querySelector('body').style.background = this.state.background
+        document.querySelector('body').style.background = `linear-gradient(to right${this.renderPanels()})`
         // fetch('http://colormind.io/api/', {
         // method: 'POST',
         // body: JSON.stringify({
