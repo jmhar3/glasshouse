@@ -7,9 +7,9 @@ const SwatchCard = ({ name, colours, index, setBackground }) => (
             <Link to="/palette" className="swatch-name">{name}</Link>
             <h4 className="like-button">❤️</h4>
         </div>
-        <div className="colours">
+        <div className="swatch-colours">
             {colours.map((colour, index) => (
-                <div key={index} style={{backgroundColour: colour}} />
+                <div key={index} className="colour-div" style={{background: `rgba(${colour.join(", ")}, 1)`}} ></div>
             ))}
         </div>
     </div>

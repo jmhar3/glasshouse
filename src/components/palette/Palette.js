@@ -8,18 +8,18 @@ import randomColor from 'randomcolor';
 export default class Palette extends Component {
     constructor(props) {
         super(props);
-        const swatchColours = [];
+        const panelColours = [];
         const n = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
 
         for (let i = 0; i < n; i++) {
-            swatchColours.push({
+            panelColours.push({
                 colour: randomColor(),
                 toolMenu: false
             });
         }
       
         this.state = {
-            swatchColours: {}
+            panelColours: panelColours
         }
     }
 
@@ -32,16 +32,21 @@ export default class Palette extends Component {
     };
 
     showTools = () => {
-        this.setState({ swatchColours: { toolMenu: true }})
+        // this.setState({ panelColours: { toolMenu: true }})
     }
 
     hideTools = () => {
-        this.setState({ swatchColours: { toolMenu: false }})
-        this.setState({ swatchColours: { colourTool: false }})
+        // this.setState({ panelColours: { toolMenu: false }})
+        // this.setState({ panelColours: { colourTool: false }})
+    }
+
+    renderPanels = () => {
+        const panelColours = Array.from(this.state.panelColours)
+        const panel =             panelColours.map((panel, index) => <PalettePanel key={index} colour={panel.colour} toolMenu={panel.toolMenu} showTools={this.showTools()} hideTools={this.hideTools()} />)
+        return panel;
     }
 
     render() {
-        const swatches = Array.from(this.state.swatchColours)
         return (
             <>
                 <div id="palette-menu">
@@ -51,7 +56,7 @@ export default class Palette extends Component {
                     <SavePalette />
                 </div>
                 <div id="palette-generator">
-                    {swatches.map((swatch, index) => <PalettePanel key={index} colour={swatch.colour} toolMenu={swatch.toolMenu} showTools={this.showTools()} hideTools={this.hideTools()} />)}
+                    {this.renderPanels()}
                 </div>
             </>
         )

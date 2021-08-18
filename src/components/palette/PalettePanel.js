@@ -1,4 +1,5 @@
 import PaletteTools from './PaletteTools';
+import React from 'react';
 
 const PalettePanel = (key, colour, toolMenu, showTools, hideTools) => {
     return (

@@ -12,7 +12,7 @@ export default class PalettePanel extends Component {
         this.setState({ colourTool: true })
     }
 
-    handleChange = (color) => {
+    handleChange = color => {
         this.setState({ background: color.hex });
       };
 
