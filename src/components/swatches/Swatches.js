@@ -7,14 +7,15 @@ export default class Swatches extends Component {
         super();
         this.state = {
             name: "no name creation",
-            colours: ["#333", "#333", "#333" ,"#333", "#333"]
+            colours: ["#888", "#111", "#444" ,"#333", "#666"],
+            background: randomColor()
         };
     }
 
     mouseEnter = () => {
         const swatchColours = Array.from(this.state.colours)
         const colours =             swatchColours.map((colour, index) => `, rgba(${colour[0]},${colour[1]},${colour[2]},1)`)
-        document.querySelector('body').style.background = `linear-gradient(to right${colours.join(',')})`
+        document.querySelector('body').style.background = `linear-gradient(to right${colours.join(', ')})`
     }
 
     mouseLeave = () => {

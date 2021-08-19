@@ -48,7 +48,7 @@ const Panel = ({ remove, key, colour, panel }) => {
     return (
         <div key={key} className="colour-generator"  onMouseEnter={showPanelTools} onMouseLeave={hidePanelTools} 
         style={{backgroundColor: colour}}>
-            <EditableInput onChange={handleChange} />
+            <EditableInput value={colour} onChange={handleChange} />
             <div className="panel-tools" style={{ display: (panelTools ? 'flex' : 'none') }}>
                 <img src={bin} alt="delete colour" onClick={remove} />
                 <img src={swatch} alt="change colour"

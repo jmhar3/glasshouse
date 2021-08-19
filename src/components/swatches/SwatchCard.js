@@ -21,7 +21,7 @@ const SwatchCard = ({ name, colours, index, mouseEnter, mouseLeave }) => {
 
     const handleClick = e => {
         dispatch({
-            type: "replacePanel",
+            type: "openPalette",
             data: colours
         })
         history.push('/palette')
@@ -30,7 +30,7 @@ const SwatchCard = ({ name, colours, index, mouseEnter, mouseLeave }) => {
     return (
         <div className="swatch-card" key={index} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
         <div className="card-head">
-            <h4 onClick={handleClick}>{name}</h4>
+            <h4 className="swatch-name" onClick={handleClick}>{name}</h4>
             <h4 className="like-button">❤️</h4>
         </div>
         <div className="swatch-colours">

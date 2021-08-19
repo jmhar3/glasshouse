@@ -28,7 +28,7 @@ const PanelReducer = (state, action) => {
                 }
                 return panel
             })
-        case "replacePanel":
+        case "openPalette":
             return [...action.data]
         default:
             return state;
