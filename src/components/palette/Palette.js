@@ -32,7 +32,7 @@ export default class Palette extends Component {
     addColour(colour) {
         let timestamp = (new Date()).getTime();
         this.state.panelColours['colour-' + timestamp ] = colour;
-        this.setState({ colours : this.state.colours });
+        this.setState({ panelColours : this.state.colours });
     }
 
     addPanel = () => {
@@ -69,7 +69,7 @@ export default class Palette extends Component {
                     <UploadPalette />
                     <SavePalette />
                 </div>
-                <PaletteList swatches={this.state.swatches} />
+                <PaletteList swatches={this.state.panelColours} />
             </>
         )
     }

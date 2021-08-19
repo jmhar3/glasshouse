@@ -2,17 +2,17 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const SwatchCard = ({ name, colours, index, mouseEnter, mouseLeave }) => {
-    const handleClick = e => {
-        if (liked) {
-            dispatchEvent({
+    // const handleClick = e => {
+    //     if (liked) {
+    //         dispatchEvent({
 
-            })
-        } else {
-            dispatchEvent({
+    //         })
+    //     } else {
+    //         dispatchEvent({
 
-            })
-        }
-    }
+    //         })
+    //     }
+    // }
 
     return (
         <div className="swatch-card" key={index} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
