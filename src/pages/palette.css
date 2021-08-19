@@ -83,14 +83,22 @@ input:focus {
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     display: flex;
 }
 
 .colour-generator {
     height: 300vw;
     width: 25%;
-    padding-top: 12vw;
+}
+
+.colour-generator input {
+    margin-top: 12vw;
+    background-color: rgba(245, 245, 245, 0.0);
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .panel-tools {

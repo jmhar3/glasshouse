@@ -1,26 +1,31 @@
-import { Component } from 'react';
+import randomColor from 'randomcolor';
 import addDivIcon from '../../images/plus.png';
+import { useState } from 'react';
 
-export default class PaletteTools extends Component {
-    state = {
-        addDiv: false,
-    };
+const AddPanel = props => {
+    const [addDiv, setAddDiv] = useState(true)
 
-    showAddDiv = () => {
-        this.setState({ addDiv: true })
+    const showAddDiv = e => {
+        setAddDiv(false)
     }
 
-    hideAddDiv = () => {
-        this.setState({ addDiv: false })
+    const hideAddDiv = e => {
+        setAddDiv(true)
     }
 
-    render(addPanel) {
-        const { addDiv } = this.state
-        return (
-            <div className="palette-menu-item" onMouseEnter={this.showAddDiv} onMouseLeave={this.hideAddDiv} onClick={addPanel}>
-                <img src={addDivIcon} alt="add colour" style={{ display: (addDiv ? 'none' : 'block') }} />
-                <h4 style={{ display: (addDiv ? 'block' : 'none') }}>Add Colour</h4>
-            </div>
-        )
+    const createPanel = e => {
+        e.preventDefault();
+        const colour = randomColor()
+        this.props.addColour(colour)
     }
+
+    return (
+        <div className="palette-menu-item"
+            onMouseEnter={showAddDiv} onMouseLeave={hideAddDiv}
+            onClick={createPanel}>
+            {addDiv ? <img src={addDivIcon} alt="add colour" /> : <h4>Add Colour</h4>}
+        </div>
+    )
 }
+
+export default AddPanel;

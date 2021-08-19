@@ -1,30 +1,26 @@
-import { Component } from 'react';
 import saveIcon from '../../images/save.png';
+import { useState } from 'react';
 
-export default class PaletteTools extends Component {
-    state = {
-        save: false
-    };
+const SavePalette = props => {
+    const [save, setSave] = useState(true)
 
-    showSave = () => {
-        this.setState({ save: true })
+    const showSave = e => {
+        setSave(false)
     }
 
-    hideSave = () => {
-        this.setState({ save: false })
+    const hideSave = e => {
+        setSave(true)
     }
 
-    savePalette = () => {
+    const savePalette = () => {
 
     }
 
-    render() {
-        const { save } = this.state
-        return (
-            <div className="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.hideSave} onClick={this.savePalette}>
-                <img src={saveIcon} alt="save" style={{ display: (save ? 'none' : 'block') }} />
-                <h4 style={{ display: (save ? 'block' : 'none') }}>Save</h4>
-            </div>
-        )
-    }
+    return (
+        <div className="palette-menu-item" onMouseEnter={showSave} onMouseLeave={hideSave} onClick={savePalette}>
+            {save ? <img src={saveIcon} alt="save" /> : <h4>Save</h4>}
+        </div>
+    )
 }
+
+export default SavePalette;

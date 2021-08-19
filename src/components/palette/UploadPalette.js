@@ -1,30 +1,27 @@
-import { Component } from 'react';
 import uploadIcon from '../../images/right-arrow.png';
+import { useState } from 'react';
 
-export default class PaletteTools extends Component {
-    state = {
-        upload: false
-    };
+const UploadPalette = props => {
+    const [upload, setUpload] = useState(true)
 
-    showUpload = () => {
-        this.setState({ upload: true })
+    const showUpload = e => {
+        setUpload(false)
     }
 
-    hideUpload = () => {
-        this.setState({ upload: false })
+    const hideUpload = e => {
+        setUpload(true)
     }
 
-    uploadPalette = () => {
+
+    const uploadPalette = () => {
 
     }
 
-    render() {
-        const { upload } = this.state
-        return (
-            <div className="palette-menu-item" onMouseEnter={this.showUpload} onMouseLeave={this.hideUpload} onClick={this.uploadPalette}>
-                <img src={uploadIcon} alt="upload" style={{ display: (upload ? 'none' : 'block') }} />
-                <h4 style={{ display: (upload ? 'block' : 'none') }}>Upload</h4>
-            </div>
-        )
-    }
+    return (
+        <div className="palette-menu-item" onMouseEnter={showUpload} onMouseLeave={hideUpload} onClick={uploadPalette}>
+            {upload ? <img src={uploadIcon} alt="upload"/> : <h4>Upload</h4>}
+        </div>
+    )
 }
+
+export default UploadPalette;

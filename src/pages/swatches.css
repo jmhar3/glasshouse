@@ -4,7 +4,7 @@ body {
 
 .title {
     text-align: center;
-    margin-bottom: 1.2vw;
+    margin-bottom: 1.8vw;
     padding: .6vw;
     padding-left: 1.5vw;
     padding-right: 1.5vw;
@@ -80,16 +80,10 @@ body {
 }
 
 .swatch-name {
-    padding-bottom: .3vw;
-    padding-left: 1.2vw;
-    padding-right: 1.2vw;
-    border-radius: 3vw;
-    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
+    padding: 0;
 }
 
 .swatch-name:hover {
-    background-color: rgba(250, 242, 242, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
     cursor: pointer;
 }
 

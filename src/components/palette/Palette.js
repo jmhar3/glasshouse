@@ -1,31 +1,43 @@
 import { Component } from 'react';
-import PalettePanel from './PalettePanel';
 import AddPanel from './AddPanel';
 import UploadPalette from './UploadPalette';
 import SavePalette from './SavePalette';
 import randomColor from 'randomcolor';
+import PaletteList from './PaletteList';
 
 export default class Palette extends Component {
     constructor(props) {
         super(props);
-        const panelColours = [];
-        const n = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
+        // const panelColours = [];
+        // const n = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
 
-        for (let i = 0; i < n; i++) {
-            panelColours.push({
-                colour: randomColor(),
-                toolMenu: false
-            });
-        }
+        // for (let i = 0; i < n; i++) {
+            // panelColours.push({
+            //     colour: randomColor()
+            // });
+        // }
       
         this.state = {
-            panelColours: panelColours
+            panelColours: {
+                'colour-1' : randomColor(),
+                'colour-2' : randomColor(),
+                'colour-3' : randomColor(),
+                'colour-4' : randomColor(),
+                'colour-5' : randomColor()
+            }
         }
     }
 
-    addPanel() {
-        const newPanel = this.state.currentPanel;
-        console.log(newPanel);
+    
+    addColour(colour) {
+        let timestamp = (new Date()).getTime();
+        this.state.panelColours['colour-' + timestamp ] = colour;
+        this.setState({ colours : this.state.colours });
+    }
+
+    addPanel = () => {
+        this.state.panelColours.push({colour: randomColor()})
+        console.log(this.state.panelColours)
     }
 
     removePanel() {
@@ -39,25 +51,25 @@ export default class Palette extends Component {
         // this.setState({ panelColours: { toolMenu: false }})
         // this.setState({ panelColours: { colourTool: false }})
     }
-
-    renderPanels = () => {
-        const panelColours = Array.from(this.state.panelColours)
-        const panel =             panelColours.map((panel, index) => <PalettePanel key={index} colour={panel.colour} toolMenu={panel.toolMenu} showTools={this.showTools()} hideTools={this.hideTools()} />)
-        return panel;
+    
+    showColourTool = () => {
+        // this.setState({ colourTool: true })
     }
+
+    handleChange = color => {
+        this.setState({ background: color.hex });
+      };
 
     render() {
         return (
             <>
                 <div id="palette-menu">
                     <input type="text" placeholder="Name Your Creation" id="name-swatch" />
-                    <AddPanel  addPanel={this.addPanel}/>
+                    <AddPanel addColour={this.addColour}/>
                     <UploadPalette />
                     <SavePalette />
                 </div>
-                <div id="palette-generator">
-                    {this.renderPanels()}
-                </div>
+                <PaletteList swatches={this.state.swatches} />
             </>
         )
     }
