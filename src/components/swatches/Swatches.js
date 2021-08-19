@@ -7,15 +7,14 @@ export default class Swatches extends Component {
         super();
         this.state = {
             name: "no name creation",
-            colours: [[43, 42, 44], [90, 83, 81], [171, 127, 110], [220, 188, 108], [235, 237, 182]],
-            background: randomColor()
+            colours: ["#333", "#333", "#333" ,"#333", "#333"]
         };
     }
 
     mouseEnter = () => {
         const swatchColours = Array.from(this.state.colours)
         const colours =             swatchColours.map((colour, index) => `, rgba(${colour[0]},${colour[1]},${colour[2]},1)`)
-        document.querySelector('body').style.background = `linear-gradient(to right${colours.join('')})`
+        document.querySelector('body').style.background = `linear-gradient(to right${colours.join(',')})`
     }
 
     mouseLeave = () => {
@@ -24,16 +23,6 @@ export default class Swatches extends Component {
 
     componentDidMount() {
         this.mouseLeave()
-        // fetch('http://colormind.io/api/', {
-        // method: 'POST',
-        // body: JSON.stringify({
-        //     model : "castlevania",
-	    //     input : [[44,43,44],[90,83,82],"N","N","N"]
-        //     })
-        // })
-        //     .then(res => res.json())
-        //     .then(data => this.setState({ colours: Object.values(data) })
-        // )
     }
 
     render() {

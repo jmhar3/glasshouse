@@ -13,6 +13,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/creations" component={CreationsPage} />
         <Route exact path="/palette" component={PalettePage} />
+        {/* <Route exact path="/palette/:swatch" component={PalettePage} /> */}
         <Route exact path="/accountaccess" component={AccountAccess} />
     </Router>
   );
