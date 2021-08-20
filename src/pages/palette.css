@@ -89,10 +89,10 @@ input:focus {
 
 .colour-generator {
     height: 300vw;
-    width: 25%;
 }
 
 .colour-generator input {
+    width: 100%;
     margin-top: 9vw;
     margin-bottom: 1.8vw;
     background-color: rgba(245, 245, 245, 0.0);

@@ -3,17 +3,6 @@ import { PanelContext } from '../palette/PanelContext';
 import { useHistory } from 'react-router';
 
 const SwatchCard = ({ name, colours, index, mouseEnter, mouseLeave }) => {
-    // const handleClick = e => {
-    //     if (liked) {
-    //         dispatchEvent({
-
-    //         })
-    //     } else {
-    //         dispatchEvent({
-
-    //         })
-    //     }
-    // }
 
     const history = useHistory()
 

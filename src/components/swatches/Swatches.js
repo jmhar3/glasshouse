@@ -7,7 +7,7 @@ export default class Swatches extends Component {
         super();
         this.state = {
             name: "no name creation",
-            colours: ["#888", "#111", "#444" ,"#333", "#666"],
+            colours: ["#540D6E", "#EE4266", "#FFD23F" ,"#3BCEAC", "#0EAD69"],
             background: randomColor()
         };
     }
@@ -27,7 +27,6 @@ export default class Swatches extends Component {
     }
 
     render() {
-        console.log(this.state.colours)
         return (
             <div id="featured-swatches">
                 <SwatchCard name={this.state.name} colours={this.state.colours} mouseLeave={this.mouseLeave} mouseEnter={this.mouseEnter} />

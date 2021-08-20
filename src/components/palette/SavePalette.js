@@ -1,7 +1,7 @@
 import saveIcon from '../../images/save.png';
 import { useState } from 'react';
 
-const SavePalette = props => {
+const SavePalette = savePalette => {
     const [save, setSave] = useState(true)
 
     const showSave = e => {
@@ -10,10 +10,6 @@ const SavePalette = props => {
 
     const hideSave = e => {
         setSave(true)
-    }
-
-    const savePalette = () => {
-
     }
 
     return (

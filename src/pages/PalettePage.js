@@ -2,11 +2,9 @@ import Palette from '../components/palette/Palette';
 import './palette.css'
 import { useContext, useEffect } from 'react';
 import { PanelContext } from '../components/palette/PanelContext';
-import FetchColours from '../components/palette/fetchPanels'
 
 const PalettePage = () => {
     const [panelState, dispatch] = useContext(PanelContext);
-    console.log(panelState, dispatch)
 
     const fetchColours = () => {
         fetch('http://colormind.io/api/', {
@@ -19,7 +17,7 @@ const PalettePage = () => {
             .then(data =>
                 data.result.forEach((colour, i) => dispatch({
                     type: "addPanel",
-                    data: `rgba(${colour.join(",")}, 1)`
+                    data: `RGB(${colour.join(", ")})`
                 }))
             )
     }

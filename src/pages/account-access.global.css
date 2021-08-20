@@ -1,8 +1,9 @@
+#account-access {
+    text-align: center;
+}
+
 div.mdl-card {
-    position: fixed;
-    left: 50%;
     top: 9vw;
-    transform: translate(-50%, 0);
 }
 
 div.firebaseui_container, div.mdl-card, .firebaseui-textfield input, .firebaseui-form-actions button {

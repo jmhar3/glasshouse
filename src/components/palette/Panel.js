@@ -6,13 +6,11 @@ import { useState, useContext, useEffect } from 'react';
 import { PanelContext } from './PanelContext';
 
 
-const Panel = ({ remove, key, colour, panel }) => {
+const Panel = ({ key, colour }) => {
     const [panelTools, setPanelTools] = useState(false)
     const [sliderTool, setSliderTool] = useState(false)
 
     const [panelState, dispatch] = useContext(PanelContext)
-
-    // useEffect()
 
     const showPanelTools = e => {
         setPanelTools(true)
@@ -28,7 +26,6 @@ const Panel = ({ remove, key, colour, panel }) => {
     }
 
     const handleChange = color => {
-        console.log(color.hex)
         dispatch({
             type: "updatePanel",
             data: {
@@ -37,20 +34,21 @@ const Panel = ({ remove, key, colour, panel }) => {
             }
         })
     };
-
-
-    // const [background, setBackground] = useState('#fff')
     
-    // const handleChangeComplete = (color) => {
-    //     setBackground(color.hex);
-    // };
+    const removePanel = () => {
+        dispatch({
+            type: "removePanel",
+            data: colour
+        })
+    };
+
 
     return (
         <div key={key} className="colour-generator"  onMouseEnter={showPanelTools} onMouseLeave={hidePanelTools} 
         style={{backgroundColor: colour}}>
             <EditableInput value={colour} onChange={handleChange} />
             <div className="panel-tools" style={{ display: (panelTools ? 'flex' : 'none') }}>
-                <img src={bin} alt="delete colour" onClick={remove} />
+                <img src={bin} alt="delete colour" onClick={removePanel} />
                 <img src={swatch} alt="change colour"
                     onMouseEnter={showSliderTool}
                 />

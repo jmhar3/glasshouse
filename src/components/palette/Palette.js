@@ -6,19 +6,33 @@ import Panel from './Panel';
 import { PanelContext } from './PanelContext';
 
 const Palette = ({panels}) => {
+
+    let inputValue;
+
+    const setValue = e => {
+        inputValue = e.target.value;
+    }
+
     const [panelState, dispatch] = useContext(PanelContext);
+
+    const savePalette = e => {
+        dispatch({
+            type: "savePalette",
+            data: inputValue
+        })
+    }
 
     return (
         <>
             <div id="palette-menu">
-                <input type="text" placeholder="Name Your Creation" id="name-swatch" />
-                <AddPanel add={colour => dispatch({ type: "addPanel", colour: colour })} />
+                <input type="text" placeholder="Name Your Creation" id="name-swatch" onKeyUp={setValue}/>
+                <AddPanel />
                 <UploadPalette />
-                <SavePalette />
+                <SavePalette savePalette={savePalette} />
             </div>
             <div id="palette-generator">
                 {panels.map((panel, index) => (
-                    <Panel panel={panel} key={index} colour={panel} remove={() => dispatch({ type: "removePanel", data: panel })} />
+                    <Panel panel={panel} key={index} colour={panel} />
                 ))}
             </div>
         </>

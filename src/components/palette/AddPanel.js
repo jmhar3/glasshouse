@@ -1,6 +1,9 @@
-import randomColor from 'randomcolor';
 import addDivIcon from '../../images/plus.png';
 import { useState } from 'react';
+import {useContext} from 'react';
+import { PanelContext } from '../palette/PanelContext';
+import { useHistory } from 'react-router';
+import randomColor from 'randomcolor';
 
 const AddPanel = props => {
     const [addDiv, setAddDiv] = useState(true)
@@ -13,10 +16,15 @@ const AddPanel = props => {
         setAddDiv(true)
     }
 
+    const history = useHistory()
+
+    const [panelState, dispatch] = useContext(PanelContext);
+
     const createPanel = e => {
-        e.preventDefault();
-        const colour = randomColor()
-        this.props.addColour(colour)
+        dispatch({
+            type: "addPanel",
+            data: randomColor()
+        })
     }
 
     return (
