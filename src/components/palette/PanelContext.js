@@ -1,4 +1,8 @@
 import {createContext, useReducer} from "react";
+// import firebase from "firebase";
+
+// const database = firebase.database()
+// var timestamp = new Date().valueOf();
 
 export const PanelContext = createContext(null)
 
@@ -33,7 +37,10 @@ const PanelReducer = (state, action) => {
         case "openPalette":
             return [...action.data]
         case "savePalette":
-            console.log(state, action.data)
+            // database.ref('/swatches/'+ timestamp).state({
+            //     name: action.data,
+            //     colours: state
+            // })
         default:
             return state;
     }

@@ -12,12 +12,6 @@ export default class Swatches extends Component {
         };
     }
 
-    mouseEnter = () => {
-        const swatchColours = Array.from(this.state.colours)
-        const colours =             swatchColours.map((colour, index) => `, rgba(${colour[0]},${colour[1]},${colour[2]},1)`)
-        document.querySelector('body').style.background = `linear-gradient(to right${colours.join(', ')})`
-    }
-
     mouseLeave = () => {
         document.querySelector('body').style.background = this.state.background
     }
@@ -29,7 +23,7 @@ export default class Swatches extends Component {
     render() {
         return (
             <div id="featured-swatches">
-                <SwatchCard name={this.state.name} colours={this.state.colours} mouseLeave={this.mouseLeave} mouseEnter={this.mouseEnter} />
+                <SwatchCard swatchName={this.state.name} swatchColours={this.state.colours} mouseLeave={this.mouseLeave} />
             </div>
         )
     }

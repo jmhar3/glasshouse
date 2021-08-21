@@ -1,9 +1,17 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import { PanelContext } from '../palette/PanelContext';
 import { useHistory } from 'react-router';
 
-const SwatchCard = ({ name, colours, index, mouseEnter, mouseLeave }) => {
+const SwatchCard = ({ swatchName, swatchColours, index, mouseLeave }) => {
 
+    const [colours, setColours] = useState(swatchColours)
+
+    const [name, setName] = useState(swatchName)
+
+    const mouseEnter = () => {
+        document.querySelector('body').style.background = `linear-gradient(to right, ${colours.join(', ')})`
+    }
+    
     const history = useHistory()
 
     const [panelState, dispatch] = useContext(PanelContext);
