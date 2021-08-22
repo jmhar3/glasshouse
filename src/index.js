@@ -7,10 +7,13 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './typography/typography.css';
 import './compatibility.css'
+import { PanelContextProvider } from './components/palette/PanelContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PanelContextProvider>
+      <App />
+    </PanelContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

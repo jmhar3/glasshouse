@@ -1,30 +1,42 @@
-import { Component } from 'react';
 import saveIcon from '../../images/save.png';
+import { useState } from 'react';
+import { useContext } from 'react';
+import { PanelContext } from './PanelContext';
 
-export default class PaletteTools extends Component {
-    state = {
-        save: false
-    };
+const SavePalette = () => {
+    const [save, setSave] = useState(true)
 
-    showSave = () => {
-        this.setState({ save: true })
+    const showSave = e => {
+        setSave(false)
     }
 
-    hideSave = () => {
-        this.setState({ save: false })
+    const hideSave = e => {
+        setSave(true)
     }
 
-    savePalette = () => {
+    const [inputValue, setInputValue] = useState("no name creation")
 
+    const setValue = e => {
+        setInputValue(e.target.value)
     }
 
-    render() {
-        const { save } = this.state
-        return (
-            <div className="palette-menu-item" onMouseEnter={this.showSave} onMouseLeave={this.hideSave} onClick={this.savePalette}>
-                <img src={saveIcon} alt="save" style={{ display: (save ? 'none' : 'block') }} />
-                <h4 style={{ display: (save ? 'block' : 'none') }}>Save</h4>
+    const [panelState, dispatch] = useContext(PanelContext);
+
+    const savePalette = e => {
+        dispatch({
+            type: "savePalette",
+            data: inputValue
+        })
+    }
+
+    return (
+        <>
+            <input type="text" placeholder="Name Your Creation" id="name-swatch" onKeyUp={setValue} />
+            <div className="palette-menu-item" onMouseEnter={showSave} onMouseLeave={hideSave} onClick={savePalette}>
+                {save ? <img src={saveIcon} alt="save" /> : <h4>Save</h4>}
             </div>
-        )
-    }
+        </>
+    )
 }
+
+export default SavePalette;
