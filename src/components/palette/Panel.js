@@ -2,7 +2,7 @@ import bin from '../../images/garbage.png';
 import swatch from '../../images/swatches.png';
 import { SliderPicker } from 'react-color';
 import { EditableInput } from 'react-color/lib/components/common';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { PanelContext } from './PanelContext';
 
 
@@ -42,13 +42,12 @@ const Panel = ({ key, colour }) => {
         })
     };
 
-
     return (
         <div key={key} className="colour-generator"  onMouseEnter={showPanelTools} onMouseLeave={hidePanelTools} 
         style={{backgroundColor: colour}}>
-            <EditableInput value={colour} onChange={handleChange} />
+            <EditableInput value={colour}/>
             <div className="panel-tools" style={{ display: (panelTools ? 'flex' : 'none') }}>
-                <img src={bin} alt="delete colour" onClick={removePanel} />
+                {panelState.length == 4 ? null : <img src={bin} alt="delete colour" onClick={removePanel} />}
                 <img src={swatch} alt="change colour"
                     onMouseEnter={showSliderTool}
                 />

@@ -2,7 +2,6 @@ import addDivIcon from '../../images/plus.png';
 import { useState } from 'react';
 import {useContext} from 'react';
 import { PanelContext } from '../palette/PanelContext';
-import { useHistory } from 'react-router';
 import randomColor from 'randomcolor';
 
 const AddPanel = props => {
@@ -15,8 +14,6 @@ const AddPanel = props => {
     const hideAddDiv = e => {
         setAddDiv(true)
     }
-
-    const history = useHistory()
 
     const [panelState, dispatch] = useContext(PanelContext);
 

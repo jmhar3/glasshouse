@@ -48,7 +48,7 @@ body {
 }
 
 .swatch-card {
-    width: 26.1%;
+    width: 31%;
     background-color: rgba(250, 242, 242, 0.10);
     border: .45vw solid transparent;
     border-radius: 3vw;
@@ -87,19 +87,21 @@ body {
     cursor: pointer;
 }
 
-.like-button:hover {
-    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.21);
-    border-radius: 3vw;
+.like-button, .delete-button {
+    width: 3vw;
+    height: 3vw;
+}
+
+.like-button:hover, .delete-button:hover {
     cursor: pointer;
 }
 
 .swatch-colours {
-    padding-top: 0.9vw;
-    gap: 1vw;
+    gap: .3vw;
 }
 
 .colour-div {
-    width: 3vw;
-    height: 3vw;
+    width: 3.9vw;
+    height: 3.9vw;
     border-radius: 90%;
 }

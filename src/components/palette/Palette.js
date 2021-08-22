@@ -1,15 +1,17 @@
 import AddPanel from './AddPanel';
-import UploadPalette from './UploadPalette';
 import SavePalette from './SavePalette';
 import Panel from './Panel';
+import { useContext } from 'react';
+import { PanelContext } from './PanelContext';
 
 const Palette = ({panels}) => {
+    const [panelState, dispatch] = useContext(PanelContext);
+
     return (
         <>
             <div id="palette-menu">
-                <AddPanel />
+                {panelState.length == 6 ? null : <AddPanel />}
                 <SavePalette />
-                <UploadPalette />
             </div>
             <div id="palette-generator">
                 {panels.map((panel, index) => (

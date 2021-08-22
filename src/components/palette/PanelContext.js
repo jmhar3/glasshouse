@@ -1,8 +1,12 @@
-import {createContext, useReducer} from "react";
-// import firebase from "firebase";
+import { createContext, useReducer } from "react";
+import firebase from "firebase/app";
+import "firebase/analytics";
+import "firebase/auth";
+import "firebase/firestore";
+import {firebaseConfig} from '../firebase/config'
 
-// const database = firebase.database()
-// var timestamp = new Date().valueOf();
+var db = firebase.firestore();
+const timestamp = new Date().valueOf();
 
 export const PanelContext = createContext(null)
 
@@ -17,9 +21,8 @@ export const PanelContextProvider = props => {
 }
 
 const PanelReducer = (state, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case "addPanel":
-            console.log(state)
             if (state.length < 6) {
                 return [...state, action.data]
             }
@@ -37,10 +40,17 @@ const PanelReducer = (state, action) => {
         case "openPalette":
             return [...action.data]
         case "savePalette":
-            // database.ref('/swatches/'+ timestamp).state({
-            //     name: action.data,
-            //     colours: state
-            // })
+            console.log(action.data, state)
+            db.collection("swatches").add({
+                name: action.data,
+                colours: state
+            })
+            .then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch((error) => {
+                console.error("Error adding document: ", error);
+            });
         default:
             return state;
     }

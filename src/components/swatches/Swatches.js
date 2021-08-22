@@ -1,30 +1,29 @@
-import { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import SwatchCard from './SwatchCard'
 import randomColor from 'randomcolor';
 
-export default class Swatches extends Component {
-    constructor() {
-        super();
-        this.state = {
-            name: "no name creation",
-            colours: ["#540D6E", "#EE4266", "#FFD23F" ,"#3BCEAC", "#0EAD69"],
-            background: randomColor()
-        };
+const Swatches = ({ swatchData }) => {
+
+    const backgroundColour = randomColor();
+
+    const [background, setBackground] = useState(backgroundColour)
+
+    const mouseLeave = () => {
+        document.querySelector('body').style.background = background
     }
 
-    mouseLeave = () => {
-        document.querySelector('body').style.background = this.state.background
-    }
+    useEffect(mouseLeave)
+    console.log(!swatchData)
 
-    componentDidMount() {
-        this.mouseLeave()
-    }
-
-    render() {
-        return (
-            <div id="featured-swatches">
-                <SwatchCard swatchName={this.state.name} swatchColours={this.state.colours} mouseLeave={this.mouseLeave} />
-            </div>
-        )
-    }
+    return (
+        <div id="featured-swatches">
+            {
+                !swatchData ? <h1>Loading...</h1> :            swatchData.map((swatch, i) => (
+                    <SwatchCard swatchName={swatch.name} swatchColours={swatch.colours} mouseLeave={mouseLeave} />
+                ))
+            }
+        </div>
+    )
 }
+
+export default Swatches;

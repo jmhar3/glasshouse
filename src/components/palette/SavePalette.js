@@ -1,6 +1,6 @@
 import saveIcon from '../../images/save.png';
 import { useState } from 'react';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { PanelContext } from './PanelContext';
 
 const SavePalette = () => {

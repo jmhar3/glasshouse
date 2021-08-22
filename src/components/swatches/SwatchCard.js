@@ -1,17 +1,15 @@
-import {useContext, useState} from 'react';
+import { useContext } from 'react';
 import { PanelContext } from '../palette/PanelContext';
 import { useHistory } from 'react-router';
+import heartIcon from '../../images/heart.png';
+import binIcon from '../../images/garbage.png';
 
-const SwatchCard = ({ swatchName, swatchColours, index, mouseLeave }) => {
-
-    const [colours, setColours] = useState(swatchColours)
-
-    const [name, setName] = useState(swatchName)
+const SwatchCard = ({swatchName, swatchColours, mouseLeave}) => {
 
     const mouseEnter = () => {
-        document.querySelector('body').style.background = `linear-gradient(to right, ${colours.join(', ')})`
+        document.querySelector('body').style.background = `linear-gradient(to right, ${swatchColours.join(', ')})`
     }
-    
+
     const history = useHistory()
 
     const [panelState, dispatch] = useContext(PanelContext);
@@ -19,24 +17,23 @@ const SwatchCard = ({ swatchName, swatchColours, index, mouseLeave }) => {
     const handleClick = e => {
         dispatch({
             type: "openPalette",
-            data: colours
+            data: swatchColours
         })
         history.push('/palette')
     }
 
     return (
-        <div className="swatch-card" key={index} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-        <div className="card-head">
-            <h4 className="swatch-name" onClick={handleClick}>{name}</h4>
-            <h4 className="like-button">❤️</h4>
+        <div className="swatch-card" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+            <div className="card-head">
+                <h4 className="swatch-name" onClick={handleClick}>{swatchName}</h4>
+                {window.location.href.indexOf("creations") ? <img className="like-button" src={heartIcon} /> : <img className="delete-button" src={binIcon} />}
+            </div>
+            <div className="swatch-colours">
+                {swatchColours.map((colour, index) =>
+                    <div key={index} className="colour-div" style={{ background: colour }} />
+                )}
+            </div>
         </div>
-        <div className="swatch-colours">
-            {colours.map((colour, index) => 
-                <div key={index} className="colour-div" style={{background: colour}} />
-            )
-            }
-        </div>
-    </div>
     )
 }
 
