@@ -40,7 +40,6 @@ const PanelReducer = (state, action) => {
         case "openPalette":
             return [...action.data]
         case "savePalette":
-            console.log(action.data, state)
             db.collection("swatches").add({
                 name: action.data,
                 colours: state
