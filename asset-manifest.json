@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/jmhar3.github.io/glasshouse/static/css/main.f47bc45f.chunk.css",
+    "main.js": "/jmhar3.github.io/glasshouse/static/js/main.6d2f8597.chunk.js",
+    "main.js.map": "/jmhar3.github.io/glasshouse/static/js/main.6d2f8597.chunk.js.map",
+    "runtime-main.js": "/jmhar3.github.io/glasshouse/static/js/runtime-main.9bcc33e9.js",
+    "runtime-main.js.map": "/jmhar3.github.io/glasshouse/static/js/runtime-main.9bcc33e9.js.map",
+    "static/css/2.460a69d1.chunk.css": "/jmhar3.github.io/glasshouse/static/css/2.460a69d1.chunk.css",
+    "static/js/2.55d0c9b0.chunk.js": "/jmhar3.github.io/glasshouse/static/js/2.55d0c9b0.chunk.js",
+    "static/js/2.55d0c9b0.chunk.js.map": "/jmhar3.github.io/glasshouse/static/js/2.55d0c9b0.chunk.js.map",
+    "static/js/3.37d87e01.chunk.js": "/jmhar3.github.io/glasshouse/static/js/3.37d87e01.chunk.js",
+    "static/js/3.37d87e01.chunk.js.map": "/jmhar3.github.io/glasshouse/static/js/3.37d87e01.chunk.js.map",
+    "index.html": "/jmhar3.github.io/glasshouse/index.html",
+    "static/css/2.460a69d1.chunk.css.map": "/jmhar3.github.io/glasshouse/static/css/2.460a69d1.chunk.css.map",
+    "static/css/main.f47bc45f.chunk.css.map": "/jmhar3.github.io/glasshouse/static/css/main.f47bc45f.chunk.css.map",
+    "static/js/2.55d0c9b0.chunk.js.LICENSE.txt": "/jmhar3.github.io/glasshouse/static/js/2.55d0c9b0.chunk.js.LICENSE.txt",
+    "static/media/typography.css": "/jmhar3.github.io/glasshouse/static/media/GlamourAbsolute_Regular.360791bb.otf",
+    "static/media/index.css": "/jmhar3.github.io/glasshouse/static/media/cursor.4acc8f78.png",
+    "static/media/garbage.6c2d8488.png": "/jmhar3.github.io/glasshouse/static/media/garbage.6c2d8488.png",
+    "static/media/heart.3b8c5628.png": "/jmhar3.github.io/glasshouse/static/media/heart.3b8c5628.png",
+    "static/media/list.ef4ede6b.png": "/jmhar3.github.io/glasshouse/static/media/list.ef4ede6b.png",
+    "static/media/save.adadac6c.png": "/jmhar3.github.io/glasshouse/static/media/save.adadac6c.png",
+    "static/media/swatches.0a0527a7.png": "/jmhar3.github.io/glasshouse/static/media/swatches.0a0527a7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9bcc33e9.js",
+    "static/css/2.460a69d1.chunk.css",
+    "static/js/2.55d0c9b0.chunk.js",
+    "static/css/main.f47bc45f.chunk.css",
+    "static/js/main.6d2f8597.chunk.js"
+  ]
+}
