@@ -9,11 +9,11 @@
 
 .palette-menu-item, input {
     justify-items: center;
-    background-color: rgba(245, 245, 245, 0.09);
+    background-color: rgba(245, 245, 245, 0.15);
     height: 6vw;
     border: none;
     border-radius: 3vw;
-    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.09);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.15);
     backdrop-filter: blur( 3.0px );
     -webkit-backdrop-filter: blur( 3.0px );
     text-align: center;
@@ -22,13 +22,8 @@
 }
 
 #palette-menu-item:hover {
-    background-color: rgba(245, 245, 245, 0.12);
-    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.12);
-}
-
-#palette-menu-item:hover {
-    background-color: rgba(245, 245, 245, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.18);
+    background-color: rgba(245, 245, 245, 0.24);
+    box-shadow: 0 8px 32px 0 rgba(84, 90, 184, 0.24);
 }
 
 .palette-menu-item {

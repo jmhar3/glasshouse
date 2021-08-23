@@ -39,7 +39,8 @@ const SwatchCard = ({ swatchName, swatchColours, swatchKey, mouseLeave }) => {
         <div key={swatchKey} className="swatch-card" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
             <div className="card-head">
                 <h4 className="swatch-name" onClick={handleClick}>{swatchName}</h4>
-                {window.location.href.includes("creations") ? <img className="delete-button" src={binIcon} onClick={deleteSwatch} /> : <img className="like-button" src={heartIcon} />}
+                {/* LIKE/SAVE + DELETE FUNCTION COMING SOON */}
+                {/* {window.location.href.includes("creations") ? <img className="delete-button" src={binIcon} onClick={deleteSwatch} /> : <img className="like-button" src={heartIcon} />} */}
             </div>
             <div className="swatch-colours">
                 {swatchColours.map((colour, index) =>
