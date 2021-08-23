@@ -29,7 +29,7 @@ const SavePalette = () => {
             type: "savePalette",
             data: inputValue
         })
-        history.push('/')
+        history.push('/creations')
     }
 
     return (

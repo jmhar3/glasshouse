@@ -18,7 +18,6 @@ const HomePage = () => {
         db.collection("swatches").get().then((querySnapshot) => {
             for (var i in querySnapshot.docs) {
                 const doc = querySnapshot.docs[i]
-                console.log(i)
                 setSwatchData(prevData => [...prevData, doc.data()])
             }
         });
