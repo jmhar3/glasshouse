@@ -1,7 +1,7 @@
 import saveIcon from '../../images/save.png';
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { PanelContext } from './PanelContext';
+import { useHistory } from 'react-router';
 
 const SavePalette = () => {
     const [save, setSave] = useState(true)
@@ -20,6 +20,8 @@ const SavePalette = () => {
         setInputValue(e.target.value)
     }
 
+    const history = useHistory()
+
     const [panelState, dispatch] = useContext(PanelContext);
 
     const savePalette = e => {
@@ -27,13 +29,14 @@ const SavePalette = () => {
             type: "savePalette",
             data: inputValue
         })
+        history.push('/')
     }
 
     return (
         <>
             <input type="text" placeholder="Name Your Creation" id="name-swatch" onKeyUp={setValue} />
             <div className="palette-menu-item" onMouseEnter={showSave} onMouseLeave={hideSave} onClick={savePalette}>
-                {save ? <img src={saveIcon} alt="save" /> : <h4>Save</h4>}
+                {save ? <img src={saveIcon} alt="save" /> : <h4>Share</h4>}
             </div>
         </>
     )
