@@ -13,15 +13,12 @@ const Swatches = ({ swatchData }) => {
     }
 
     useEffect(mouseLeave)
-    console.log(!swatchData)
 
     return (
         <div id="featured-swatches">
-            {
-                !swatchData ? <h1>Loading...</h1> :            swatchData.map((swatch, i) => (
-                    <SwatchCard swatchName={swatch.name} swatchColours={swatch.colours} mouseLeave={mouseLeave} />
-                ))
-            }
+            { swatchData.map((swatch, i) => (
+                    <SwatchCard swatchKey={i} swatchName={swatch.name} swatchColours={swatch.colours} mouseLeave={mouseLeave} />
+                )) }
         </div>
     )
 }

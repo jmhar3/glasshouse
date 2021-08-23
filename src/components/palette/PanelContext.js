@@ -3,10 +3,10 @@ import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
-import {firebaseConfig} from '../firebase/config'
+import { firebaseConfig } from '../firebase/config'
 
 var db = firebase.firestore();
-const timestamp = new Date().valueOf();
+const user = firebase.auth().currentUser;
 
 export const PanelContext = createContext(null)
 
@@ -40,16 +40,22 @@ const PanelReducer = (state, action) => {
         case "openPalette":
             return [...action.data]
         case "savePalette":
-            db.collection("swatches").add({
-                name: action.data,
-                colours: state
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    db.collection("swatches").add({
+                        name: action.data,
+                        colours: state,
+                        creator: user.uid
+                    })
+                        .then((docRef) => {
+                            console.log("Document written with ID: ", docRef.id);
+                        })
+                        .catch((error) => {
+                            console.error("Error adding document: ", error);
+                            alert("An error occurred while saving creation.")
+                        });
+                }
             })
-            .then((docRef) => {
-                console.log("Document written with ID: ", docRef.id);
-            })
-            .catch((error) => {
-                console.error("Error adding document: ", error);
-            });
         default:
             return state;
     }

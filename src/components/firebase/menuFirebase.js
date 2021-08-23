@@ -21,8 +21,7 @@ function MenuFirebase() {
                 <Link to="/accountaccess">Sign In</Link>
             </div>
         );
-    }
-    return (
+    } return (
         <div>
             <h5 className="user">Hello {firebase.auth().currentUser.displayName}!</h5>
             <a className="access" onClick={() => firebase.auth().signOut()}>Sign Out</a>
