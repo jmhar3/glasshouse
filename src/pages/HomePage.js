@@ -6,7 +6,9 @@ import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
 import { firebaseConfig } from '../components/firebase/config'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { PanelContext } from '../components/palette/PanelContext';
+import randomColor from 'randomcolor';
 
 const HomePage = () => {
 
@@ -24,6 +26,37 @@ const HomePage = () => {
     }
 
     useEffect(fetchSwatches, [])
+
+    const [panelState, dispatch] = useContext(PanelContext);
+
+    const panelTotal = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
+    
+    const fetchColours = () => {
+        for (let i = 0; i < panelTotal; i++) {
+            dispatch({
+                type: "addPanel",
+                data: randomColor()
+            })
+        }
+    }
+
+    // const fetchColours = () => {
+    //     fetch('http://colormind.io/api/', {
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //             model: "default"
+    //         })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data =>
+    //             data.result.forEach((colour, i) => dispatch({
+    //                 type: "addPanel",
+    //                 data: `RGB(${colour.join(", ")})`
+    //             }))
+    //         )
+    // }
+
+    useEffect(fetchColours, [])
 
     return (
         <>

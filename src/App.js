@@ -8,7 +8,7 @@ import AccountAccess from './pages/AccountAccess';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/glasshouse">
         <Nav />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/creations" component={CreationsPage} />

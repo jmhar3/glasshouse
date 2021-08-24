@@ -17,7 +17,7 @@ export default class Nav extends Component {
         const {showing} = this.state
         const user = firebase.auth().currentUser;
         return (
-            <header onMouseEnter={() => this.setState({ showing: !showing})} onMouseLeave={() => this.setState({ showing: !showing})}>
+            <header onMouseEnter={() => this.setState({ showing: !showing})} onMouseLeave={() => this.setState({ showing: !showing})} >
             <div id="menu-head">
                 <Link to="/"><img src={homeIcon} id="user-icon" alt="home icon" /></Link>
                 <img src={menuButton} id="menu-button" alt="menu" style={{ display: (showing ? 'none' : 'block') }} />

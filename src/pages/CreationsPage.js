@@ -34,6 +34,8 @@ const CreationsPage = () => {
 
     useEffect(fetchSwatches, [])
 
+    // console.log(swatchData)
+
     return (
         <>
             <div id="creations-page">
