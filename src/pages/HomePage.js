@@ -12,21 +12,6 @@ import randomColor from 'randomcolor';
 
 const HomePage = () => {
 
-    const [swatchData, setSwatchData] = useState([])
-
-    const db = firebase.firestore();
-
-    const fetchSwatches = () => {
-        db.collection("swatches").get().then((querySnapshot) => {
-            for (var i in querySnapshot.docs) {
-                const doc = querySnapshot.docs[i]
-                setSwatchData(prevData => [...prevData, doc.data()])
-            }
-        });
-    }
-
-    useEffect(fetchSwatches, [])
-
     const [panelState, dispatch] = useContext(PanelContext);
 
     const panelTotal = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
@@ -39,6 +24,8 @@ const HomePage = () => {
             })
         }
     }
+
+    useEffect(fetchColours, [])
 
     // const fetchColours = () => {
     //     fetch('http://colormind.io/api/', {
@@ -56,7 +43,19 @@ const HomePage = () => {
     //         )
     // }
 
-    useEffect(fetchColours, [])
+    const [swatchData, setSwatchData] = useState([])
+
+    const db = firebase.firestore();
+
+    const fetchSwatches = () => {
+        db.collection("swatches").get().then((querySnapshot) => {
+            querySnapshot.docs.forEach((doc) => {
+                setSwatchData(prevData => [...prevData,{id: doc.id, ...doc.data()}])
+            })
+        });
+    }
+
+    useEffect(fetchSwatches, [])
 
     return (
         <>

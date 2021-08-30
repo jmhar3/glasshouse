@@ -8,10 +8,10 @@ import "firebase/auth";
 import "firebase/firestore";
 import { firebaseConfig } from '../firebase/config'
 
-const SwatchCard = ({ swatchName, swatchColours, swatchKey, mouseLeave }) => {
+const SwatchCard = ({ swatch, removeSwatch, mouseLeave }) => {
 
     const mouseEnter = () => {
-        document.querySelector('body').style.background = `linear-gradient(to right, ${swatchColours.join(', ')})`
+        document.querySelector('body').style.background = `linear-gradient(to right, ${swatch.colours.join(', ')})`
     }
 
     const history = useHistory()
@@ -21,29 +21,34 @@ const SwatchCard = ({ swatchName, swatchColours, swatchKey, mouseLeave }) => {
     const handleClick = e => {
         dispatch({
             type: "openPalette",
-            data: swatchColours
+            data: swatch.colours
         })
         history.push('/palette')
     }
 
     const deleteSwatch = () => {
         const db = firebase.firestore()
-        db.collection("swatches").doc(swatchKey).delete().then(() => {
-            console.log("Document successfully deleted!");
-        }).catch((error) => {
-            console.error("Error removing document: ", error);
-        });
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user.uid === swatch.creator) {
+                db.collection("swatches").doc(swatch.id).delete().then(() => {
+                    removeSwatch(swatch.id)
+                    console.log("Document successfully deleted!", swatch.id);
+                }).catch((error) => {
+                    console.error("Error removing document: ", error);
+                });
+            }
+        })
     }
 
     return (
-        <div key={swatchKey} className="swatch-card" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+        <div key={swatch.id} className="swatch-card" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
             <div className="card-head">
-                <h4 className="swatch-name" onClick={handleClick}>{swatchName}</h4>
+                <h4 className="swatch-name" onClick={handleClick}>{swatch.name}</h4>
                 {/* LIKE/SAVE + DELETE FUNCTION COMING SOON */}
-                {/* {window.location.href.includes("creations") ? <img className="delete-button" src={binIcon} onClick={deleteSwatch} /> : <img className="like-button" src={heartIcon} />} */}
+                {window.location.href.includes("creations") ? <img className="delete-button" src={binIcon} onClick={deleteSwatch} /> : <img className="like-button" src={heartIcon} />}
             </div>
             <div className="swatch-colours">
-                {swatchColours.map((colour, index) =>
+                {swatch.colours.map((colour, index) =>
                     <div key={index} className="colour-div" style={{ background: colour }} />
                 )}
             </div>

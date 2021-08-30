@@ -6,13 +6,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import './typography/typography.css';
-import './compatibility.css'
-import { PanelContextProvider } from './components/palette/PanelContext'
+import './compatibility.css';
+import { PanelContextProvider } from './components/palette/PanelContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <PanelContextProvider>
-      <App />
+        <App />
     </PanelContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

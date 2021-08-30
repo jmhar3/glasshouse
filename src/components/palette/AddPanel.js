@@ -1,6 +1,5 @@
 import addDivIcon from '../../images/plus.png';
-import { useState } from 'react';
-import {useContext} from 'react';
+import { useState, useContext } from 'react';
 import { PanelContext } from '../palette/PanelContext';
 import randomColor from 'randomcolor';
 
@@ -26,7 +25,7 @@ const AddPanel = props => {
 
     return (
         <div className="palette-menu-item"
-            onMouseEnter={showAddDiv} onMouseLeave={hideAddDiv}
+            onMouseOver={showAddDiv} onMouseLeave={hideAddDiv}
             onClick={createPanel}>
             {addDiv ? <img src={addDivIcon} alt="add colour" /> : <h4>Add Colour</h4>}
         </div>

@@ -43,18 +43,17 @@ const Panel = ({ key, colour }) => {
     };
 
     return (
-        <div key={key} className="colour-generator"  onMouseEnter={showPanelTools} onMouseLeave={hidePanelTools} 
+        <div key={key} className="colour-generator"  onMouseOver={showPanelTools} onMouseLeave={hidePanelTools} 
         style={{backgroundColor: colour}}>
             <EditableInput value={colour}/>
             <div className="panel-tools" style={{ display: (panelTools ? 'flex' : 'none') }}>
                 {panelState.length == 4 ? null : <img src={bin} alt="delete colour" onClick={removePanel} />}
                 <img src={swatch} alt="change colour"
-                    onMouseEnter={showSliderTool}
+                    onMouseOver={showSliderTool}
                 />
             </div>
             <div style={{ display: (sliderTool ? 'block' : 'none') }}>
                 <SliderPicker
-                    color={colour}
                     onChangeComplete={handleChange}
                 />
             </div>

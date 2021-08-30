@@ -47,6 +47,6 @@ nav {
     gap: 1.2vw;
 }
 
-#navbar a, #menu-head a {
+#menu-body a, #menu-head a {
     cursor: pointer;
   }

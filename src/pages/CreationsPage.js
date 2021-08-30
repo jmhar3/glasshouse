@@ -21,7 +21,7 @@ const CreationsPage = () => {
                 .then((querySnapshot) => {
                     for (var i in querySnapshot.docs) {
                         const doc = querySnapshot.docs[i]
-                        setSwatchData(prevData => [...prevData, doc.data()])
+                        setSwatchData(prevData => [...prevData,{id: doc.id, ...doc.data()}])
                     }
                 })
                 .catch((error) => {
@@ -34,7 +34,10 @@ const CreationsPage = () => {
 
     useEffect(fetchSwatches, [])
 
-    // console.log(swatchData)
+    const removeSwatch = swatchID => {
+        const newSwatch = swatchData.filter(data => data.id !== swatchID);
+        setSwatchData(newSwatch)
+    }
 
     return (
         <>
@@ -42,7 +45,7 @@ const CreationsPage = () => {
                 <div className="page-title">
                     <h1 className="title">Creations</h1>
                 </div>
-                <Swatches swatchData={swatchData} />
+                <Swatches swatchData={swatchData} removeSwatch={removeSwatch} />
             </div>
             <footer id="footer">
                 <p>Special thanks to <a href="http://colormind.io/">ColorMind</a> + <a href="https://www.freepik.com" title="Freepik">Freepik</a>.</p>

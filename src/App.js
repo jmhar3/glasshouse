@@ -6,7 +6,7 @@ import CreationsPage from './pages/CreationsPage';
 import PalettePage from './pages/PalettePage';
 import AccountAccess from './pages/AccountAccess';
 
-const App = () => {
+function App() {
   return (
     <Router basename="/glasshouse">
         <Nav />
