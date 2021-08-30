@@ -3,6 +3,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import { FirebaseAuth } from "react-firebaseui";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const uiConfig = {
     signInFlow: 'popup',
@@ -17,23 +18,29 @@ const uiConfig = {
 };
 
 function SignInScreen() {
+    const [isSignedIn, setIsSignedIn] = useState(false); 
 
-    const user = firebase.auth().currentUser;
-
-    if (user !== null) {
+    useEffect(() => {
+      const unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+        setIsSignedIn(!!user);
+      });
+      return () => unregisterAuthObserver();
+    }, []);
+  
+    if (!isSignedIn) {
         return (
-            <div id="logged-in">
-                <div id="logged-in-header">
-                    <h1>Welcome {user.displayName}!</h1>
-                    <h4>You are signed in.</h4>
-                </div>
-                <Link to='/palette' id="logged-in-button">Start Creating</Link>
+            <div className="access-modal">
+                <FirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
             </div>
         );
     }
     return (
-        <div className="access-modal">
-            <FirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+        <div id="logged-in">
+            <div id="logged-in-header">
+                <h1>Welcome {firebase.auth().currentUser.displayName}!</h1>
+                <h4>You are signed in.</h4>
+            </div>
+            <Link to='/palette' id="logged-in-button">Start Creating</Link>
         </div>
     );
 }
